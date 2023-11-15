@@ -10,15 +10,26 @@
 <form action="#" th:method="POST" th:action="@{/new}" th:object="${user}">
     <label for="name">Name</label>
     <input type="text" th:field="*{name}" id="name">
+    <p style="color:lightcoral" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</p>
+
     <label for="lastname">Lastname</label>
     <input type="text" th:field="*{lastname}" id="lastname">
+    <p style="color:lightcoral" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Last name error</p>
+
     <label for="age">Age</label>
     <input type="number" th:field="*{age}" id="age">
+    <p style="color:lightcoral" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</p>
+
     <label for="email">Email</label>
     <input type="text" th:field="*{email}" id="email">
+    <p style="color:lightcoral" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</p>
+
     <hr/>
+
     <input type="submit" value="Add User"/>
 </form>
+
+
 
 
 </body>

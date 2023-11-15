@@ -14,8 +14,9 @@
 <hr/>
 <a th:href="@{/edit?id={id}(id=${user.id})}">Edit</a>
 
-<form th:method="DELETE" th:action="@{/?id={id}(id=${user.getId()})}">
-    <input type="submit" value="Delete"/>
+<form method="GET" action="/delete">
+    <input type="hidden" name="id" th:value="${user.id}">
+    <button type="submit">Delete</button>
 </form>
 <hr/>
 <a href="/">Go back to the main page</a>

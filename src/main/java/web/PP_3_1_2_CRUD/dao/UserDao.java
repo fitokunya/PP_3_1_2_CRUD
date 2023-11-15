@@ -10,13 +10,13 @@ import java.util.List;
 public interface UserDao {
 
 
-    public List<User> index();
+    List<User> showAllUsers();
 
-    public User show(Long id);
+    User show(Long id);
 
-    public void add(User user);
+    void add(User user);
 
-    public void update(Long id, User updatedUser);
+    void update(Long id, User updatedUser);
 
-    public void delete(Long id);
+    void delete(Long id);
 }

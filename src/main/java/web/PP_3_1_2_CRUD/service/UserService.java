@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public interface UserService {
-    List<User> index();
+    List<User> showAllUsers();
 
     User show(Long id);
 

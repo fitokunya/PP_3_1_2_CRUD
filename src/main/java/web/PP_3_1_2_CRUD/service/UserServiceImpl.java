@@ -10,7 +10,6 @@ import web.PP_3_1_2_CRUD.models.User;
 import java.util.List;
 
 @Service
-@EnableTransactionManagement(proxyTargetClass = true)
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
@@ -20,13 +19,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
-    public List<User> index() {
-        return userDao.index();
+    @Transactional(readOnly = true)
+    public List<User> showAllUsers() {
+        return userDao.showAllUsers();
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public User show(Long id) {
         return userDao.show(id);
     }
